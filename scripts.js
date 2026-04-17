@@ -12,12 +12,15 @@ if (issues.length === 0) {
     ];
     localStorage.setItem("issues", JSON.stringify(issues));
 }
-function showBug() {
+//Form to insert data
+function showBugForm() {
 
 };
+//save to tickets(ppl and projects not included)
 function saveBug() {
 
 };
+//save info to ticket
 function saveBug() {
     let newBug ={id: Date.now(),
     summary: document.getElementById("summary").value,
@@ -35,11 +38,24 @@ function saveBug() {
     issues.push(newBug);
     localStorage.setItem("issues", JSON.stringify(issues));
 
-    displayBugs();
+    
 }
-function displayBugsSum() {};
+//display summary of ticket
+function displayBugsSum() {
+    let container = document.getElementById("all");
+    container.innerHTML = "";
 
+    issues.forEach(bug => {
+        let ticket = document.createElement("div");
+
+        ticket.innerHTML =`
+        ${bug.summary} | ${bug.identifiedBy} | ${bug.project} | ${bug.assignedTo} | ${bug.priority} | ${bug.status} | ${bug.dateIdentified} | ${bug.targetDate}
+        `;
+    });
+};
+//Display ALL of ticket
 function displayDetail() {};
+//save to ticket
 function saveEdit() {};
 
 // Display tickets by page
