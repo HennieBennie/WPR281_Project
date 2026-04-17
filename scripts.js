@@ -60,10 +60,7 @@ function generateItem(summary, description, identifiedBy, project, assignedTo, p
 
     newDiv.addEventListener('click', () => {
         alert('Clicked');
-    }
-    
-    // Append the div to the body
-    document.body.appendChild(newDiv);
+    });
 }
 
 // Tab functionality
