@@ -42,6 +42,30 @@ function displayBugsSum() {};
 function displayDetail() {};
 function saveEdit() {};
 
+// Display tickets by page
+
+function generateItem(summary, description, identifiedBy, project, assignedTo, priority, status, dateIdentified, targetDate) {
+        const item = document.createElement("div");
+        newDiv.id = 'myDiv';
+        newDiv.className = 'highlight';
+        newDiv.innerHTML = 'Hello, I am a dynamically created div!';
+
+        // Apply some inline styles
+        newDiv.style.width = '200px';
+        newDiv.style.height = '50px';
+        newDiv.style.backgroundColor = 'skyblue';
+        newDiv.style.textAlign = 'center';
+        newDiv.style.lineHeight = '50px';
+        newDiv.style.fontWeight = 'bold';
+
+    newDiv.addEventListener('click', () => {
+        alert('Clicked');
+    }
+    
+    // Append the div to the body
+    document.body.appendChild(newDiv);
+}
+
 // Tab functionality
 
 function openTab(evt, tabName) {
