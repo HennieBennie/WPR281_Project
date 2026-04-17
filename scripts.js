@@ -57,6 +57,7 @@ function displayDetail() {};
 function saveEdit() {};
 
 // Display tickets by page
+//moet ek die displayBugsSum function hier insit?
 
 function generateItem(summary, description, identifiedBy, project, assignedTo, priority, status, dateIdentified, targetDate) {
         const newDiv = document.createElement("div");
