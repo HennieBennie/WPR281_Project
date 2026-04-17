@@ -42,6 +42,8 @@ function displayBugsSum() {};
 function displayDetail() {};
 function saveEdit() {};
 
+// Tab functionality
+
 function openTab(evt, tabName) {
     // Hide all tab content
     const tabcontent = document.getElementsByClassName("tabcontent");
