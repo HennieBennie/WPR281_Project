@@ -53,7 +53,7 @@ function displayBugsSum() {
 };
 //Display ALL of ticket
 function displayDetail(id) {
-  window.location.href = `BugDetails.html?id=${id}`;  
+  window.location.href = `BugDetails.html`;  
 };
 //save to ticket
 function saveEdit() {};
