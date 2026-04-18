@@ -46,13 +46,15 @@ function displayBugsSum() {
         let ticket = document.createElement("div");
 
         ticket.innerHTML =`
-        ${bug.summary} | ${bug.identifiedBy} | ${bug.project} | ${bug.assignedTo} | ${bug.priority} | ${bug.status} | ${bug.dateIdentified} | ${bug.targetDate}
+        ${bug.summary} | ${bug.identifiedBy} | ${bug.project} | ${bug.assignedTo} | ${bug.priority} | ${bug.status} | ${bug.dateIdentified} | ${bug.targetDate} | <button onclick="displayDetail(${bug.id})">View Bug</button>
         `;
         container.appendChild(ticket);
     });
 };
 //Display ALL of ticket
-function displayDetail() {};
+function displayDetail(id) {
+  window.location.href = `details.html?id=${id}`;  
+};
 //save to ticket
 function saveEdit() {};
 
