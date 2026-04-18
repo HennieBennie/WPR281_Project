@@ -1,7 +1,7 @@
 let issues = JSON.parse(localStorage.getItem("issues")) || [];
 
 let link = new URLSearchParams(window.location.search);
-let id = link.get("id");
+let id = Number(link.get("id"));
 
 let bug = issues.find(bug => bug.id === id);
 
