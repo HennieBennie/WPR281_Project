@@ -147,4 +147,5 @@ function saveResolution(id) {
     location.reload();
    
     history.back();
+    refresh();
 };
