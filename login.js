@@ -11,7 +11,5 @@ function login() {
         localStorage.setItem("isLoggedIn", "true");
 
         window.location.href = "index.html";
-    } else {
-        document.getElementById("errorMsg").textContent = "Invalid username or password";
     }
 }
