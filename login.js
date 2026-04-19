@@ -1,12 +1,17 @@
 function login() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-    let admin = "admin";
+    // Hardcoded admin login
+    const adminUsername = "admin";
+    const adminPassword = "admin";
 
-    if (username === admin && password === admin) {
-        localStorage.setItem("loggedIn", "true");
-        window.location.href ="index.html";
+    if (username === adminUsername && password === adminPassword) {
+        // Optional: mark user as logged in
+        localStorage.setItem("isLoggedIn", "true");
 
+        window.location.href = "index.html";
+    } else {
+        document.getElementById("errorMsg").textContent = "Invalid username or password";
     }
 }
