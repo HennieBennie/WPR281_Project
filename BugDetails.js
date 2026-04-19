@@ -25,10 +25,20 @@ let bug = issues.find(bug => bug.id === id);
 let container = document.getElementById("bugDetails");
 
 if(bug) {  
+    let resolutionHTML = "";
+
+    if (bug.status === "resolved") {
+        resolutionHTML = `
+            <h4>Resolution Details</h4>
+            <p>Resolved Date: ${bug.resolutionDate}</p>
+            <p>Resolution Summary: ${bug.resolutionSummary}</p>
+    `;
+}
     container.innerHTML = `
     <p>Ticket ID:${bug.id}</p>
     <p>Summary:${bug.summary}</p>
     <p>Status:${bug.status}</p>
+    ${resolutionHTML}
     <p>Description:${bug.description}</p>
     <p>Identified by:${bug.identifiedBy}</p>
     <p>Assigned to:</p>
@@ -43,8 +53,14 @@ if(bug) {
     <p>Date identified:${bug.entryDate}</p>
     <p>Target date:${bug.targetDate}</p>
     <button class="button" onclick="EditDetails(${bug.id})">Edit</button>
-    <button class="button" onclick="ResolveIssue(${bug.id})">Resolve</button>
-    `;} else {
+    ${
+        bug.status !== "resolved"
+        ? `<button class="button" onclick="ResolveIssue(${bug.id})">Resolve</button>`
+        : ""
+    }
+        `;
+    
+    } else {
         container.innerHTML = "<p>Bug not found</p>";
     };
 function EditDetails(id) {

@@ -87,13 +87,15 @@ function displayBugsSum() {
             </div>
 
             <div class="priorityDiv">${bug.priority}</div>
-            <div class="statusDiv">${bug.status}</div>
+            <div class="statusDiv">
+                ${bug.status === "resolved" ? "Resolved" : bug.status}
+            </div>
 
             <div class="dateIdentifiedDiv">
                 ${bug.entryDate?.split("T")[0]}
             </div>
 
-            <div class="targetDateDiv">${bug.targetDate}</div>
+            <div class="targetDateDiv">${bug.targetDate?.split("T")[0] || bug.targetDate}</div>
 
             <div>
                 <button class="button" onclick="displayDetail(${bug.id})">View Bug</button>
