@@ -1,3 +1,4 @@
+console.log("Login status:", localStorage.getItem("isLoggedIn"));
 if (localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "login.html";
 }
