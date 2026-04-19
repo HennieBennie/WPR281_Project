@@ -5,6 +5,8 @@ function login() {
     let admin = "admin";
 
     if (username === admin && password === admin) {
+        localStorage.setItem("loggedIn", "true");
         window.location.href ="index.html";
+
     }
 }

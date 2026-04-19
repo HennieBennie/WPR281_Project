@@ -1,3 +1,6 @@
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
 let issues = JSON.parse(localStorage.getItem("issues")) || [];
 
 if (issues.length === 0) {
