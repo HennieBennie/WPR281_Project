@@ -40,8 +40,8 @@ if (issues.length === 0) {
             projectID: "102",
             projectName: "Website",
             entryDate: "2026-04-01T09:00:00",
-            targetDate: "2026-04-05",
-            resolutionDate: "2026-04-04",
+            targetDate: "2026-05-05",
+            resolutionDate: "2026-05-04",
             resolutionSummary: "Added validation checks"
         },
         {
@@ -59,7 +59,7 @@ if (issues.length === 0) {
             projectID: "101",
             projectName: "Bug Tracker",
             entryDate: "2026-04-12T11:00:00",
-            targetDate: "2026-04-25",
+            targetDate: "2026-05-25",
             resolutionDate: null,
             resolutionSummary: ""
         },
@@ -78,7 +78,7 @@ if (issues.length === 0) {
             projectID: "103",
             projectName: "Accounting System",
             entryDate: "2026-03-28T08:30:00",
-            targetDate: "2026-04-02",
+            targetDate: "2026-04-21",
             resolutionDate: null,
             resolutionSummary: ""
         },
@@ -98,7 +98,7 @@ if (issues.length === 0) {
             projectName: "Website",
             entryDate: "2026-04-03T14:00:00",
             targetDate: "2026-04-06",
-            resolutionDate: "2026-04-05",
+            resolutionDate: "2026-05-05",
             resolutionSummary: "Fixed API endpoint"
         },
         {
@@ -223,7 +223,7 @@ function saveBug() {
     if (!targetDate) errors.push("Target Date is required");
 
     // Date validation
-    // FIX: proper date comparison
+    // date comparison
     let today = new Date();
     let tDate = new Date(targetDate);
 
