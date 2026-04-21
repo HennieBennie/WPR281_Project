@@ -386,7 +386,6 @@ function displayBugsSum(tabName) {
                 <select id="status-${bug.id}" class="status-${bug.status.replace(" ", "").toLowerCase()}" onchange="autoUpdate(${bug.id}, 'status', this.value)">
                     <option value="open" ${bug.status.toLowerCase() === "open" ? "selected" : ""}>Open</option>
                     <option value="in progress" ${bug.status.toLowerCase() === "in progress" ? "selected" : ""}>In Progress</option>
-                    <option value="resolved" ${bug.status.toLowerCase() === "resolved" ? "selected" : ""}>Resolved</option>
                     <option value="overdue" ${bug.status.toLowerCase() === "overdue" ? "selected" : ""}>Overdue</option>
                 </select>
             </div>
