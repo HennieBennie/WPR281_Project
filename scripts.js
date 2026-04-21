@@ -334,11 +334,10 @@ function displayBugsSum(tabName) {
     const header = document.createElement("div");
     header.className = "tabgrid";
     header.innerHTML = `
-        <div class="hasBorder">Summary</div>
-        <div class="hasBorder">Description</div>
         <div class="hasBorder">Identified By</div>
-        <div class="hasBorder">Project</div>
         <div class="hasBorder">Assigned To</div>
+        <div class="hasBorder">Summary</div>
+        <div class="hasBorder">Project</div>
         <div class="hasBorder">Priority</div>
         <div class="hasBorder">Status</div>
         <div class="hasBorder">Date Identified</div>
@@ -351,30 +350,25 @@ function displayBugsSum(tabName) {
 
         ticket.innerHTML = `
          <div class="tabgrid">
+            <div class="hasBorder" class="personDiv">${bug.identifiedBy}</div>
 
-            <div class="summaryDiv">${bug.summary}</div>
-            <div class="descriptionDiv">${bug.description}</div>
-
-            <div class="personDiv">${bug.identifiedBy}</div>
-
-            <div class="projectDiv">${bug.projectID} - ${bug.projectName}</div>
-
-            <div class="assignedToDiv">
+            <div class="hasBorder" class="assignedToDiv">
                 ${bug.personName} ${bug.personSurname}
             </div>
 
-            <div class="priorityDiv">${bug.priority}</div>
-            <div class="statusDiv">
-                ${bug.status === "resolved" ? "Resolved" : bug.status}
-            </div>
+            <div class="hasBorder" class="summaryDiv">${bug.summary}</div>
 
-            <div class="dateIdentifiedDiv">
-                ${bug.entryDate?.split("T")[0]}
-            </div>
+            <div class="hasBorder" class="projectDiv">${bug.projectID} - ${bug.projectName}</div>
 
-            <div class="targetDateDiv">${bug.targetDate?.split("T")[0] || bug.targetDate}</div>
+            <div class="hasBorder" class="priorityDiv">${bug.priority}</div>
 
-            <div>
+            <div class="hasBorder" class="statusDiv">${bug.status === "resolved" ? "Resolved" : bug.status}</div>
+
+            <div class="hasBorder" class="dateIdentifiedDiv">${bug.entryDate?.split("T")[0]}</div>
+
+            <div class="hasBorder" class="targetDateDiv">${bug.targetDate?.split("T")[0] || bug.targetDate}</div>
+
+            <div class="centered">
                 <button class="button" onclick="displayDetail(${bug.id})">View Bug</button>
             </div>
 

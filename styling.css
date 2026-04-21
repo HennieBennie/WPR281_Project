@@ -69,23 +69,12 @@
         font-size: 14px;
     }
 
-    .loginButton {
-        margin: 0 auto;
-        display: block;
-        color: #ffffff;
-        border: none;
-        padding: 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 15px;
-    }
-
 
 /* Styling for the tab group */
 
     .tabgrid {
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(9, 1fr);
         grid-template-rows: repeat(1, 1fr);
         border-radius: 16px;
         /* gap: 8px; */
@@ -141,6 +130,11 @@
         font-size: 14px;
         align-self: flex-start;
         align-items: center;
+    }
+
+    .centered {
+        margin: 0 auto;
+        display: block;
     }
 
     .button:hover {
