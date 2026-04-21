@@ -78,7 +78,7 @@ if (issues.length === 0) {
             projectID: "103",
             projectName: "Accounting System",
             entryDate: "2026-03-28T08:30:00",
-            targetDate: "2026-04-21",
+            targetDate: "2026-05-21",
             resolutionDate: null,
             resolutionSummary: ""
         },
@@ -97,7 +97,7 @@ if (issues.length === 0) {
             projectID: "102",
             projectName: "Website",
             entryDate: "2026-04-03T14:00:00",
-            targetDate: "2026-04-06",
+            targetDate: "2026-05-06",
             resolutionDate: "2026-05-05",
             resolutionSummary: "Fixed API endpoint"
         },
@@ -116,7 +116,7 @@ if (issues.length === 0) {
             projectID: "101",
             projectName: "Bug Tracker",
             entryDate: "2026-04-15T10:30:00",
-            targetDate: "2026-04-22",
+            targetDate: "2026-05-22",
             resolutionDate: null,
             resolutionSummary: ""
         },
@@ -135,7 +135,7 @@ if (issues.length === 0) {
             projectID: "104",
             projectName: "Messaging System",
             entryDate: "2026-04-11T13:00:00",
-            targetDate: "2026-04-18",
+            targetDate: "2026-05-18",
             resolutionDate: null,
             resolutionSummary: ""
         },
