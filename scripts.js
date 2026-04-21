@@ -277,6 +277,20 @@ if (!id) return;
   window.location.href = `BugDetails.html?id=${id}`;  
 };
 
+function autoUpdate(id, field, value) {
+        let bug = issues.find(b => b.id === id);
+    if (!bug) return;
+
+    bug[field] = value;
+
+    localStorage.setItem("issues", JSON.stringify(issues));
+
+    let selectEl = document.getElementById(`${field}-${id}`);
+    if (selectEl) {
+        selectEl.className = ""; // reset
+        selectEl.classList.add(`${field}-${value.replace(" ", "").toLowerCase()}`);
+    }
+}
 
 // Tab functionality
 
@@ -360,9 +374,22 @@ function displayBugsSum(tabName) {
 
             <div class="hasBorder" class="projectDiv">${bug.projectID} - ${bug.projectName}</div>
 
-            <div class="hasBorder" class="priorityDiv">${bug.priority}</div>
+            <div class="hasBorder priorityDiv">
+                <select id="priority-${bug.id}" class="priority-${bug.priority.toLowerCase()}" onchange="autoUpdate(${bug.id}, 'priority', this.value)">
+                    <option value="low" ${bug.priority.toLowerCase() === "low" ? "selected" : ""}>Low</option>
+                    <option value="medium" ${bug.priority.toLowerCase() === "medium" ? "selected" : ""}>Medium</option>
+                    <option value="high" ${bug.priority.toLowerCase() === "high" ? "selected" : ""}>High</option>
+                </select>
+            </div>
 
-            <div class="hasBorder" class="statusDiv">${bug.status === "resolved" ? "Resolved" : bug.status}</div>
+            <div class="hasBorder statusDiv">
+                <select id="status-${bug.id}" class="status-${bug.status.replace(" ", "").toLowerCase()}" onchange="autoUpdate(${bug.id}, 'status', this.value)">
+                    <option value="open" ${bug.status.toLowerCase() === "open" ? "selected" : ""}>Open</option>
+                    <option value="in progress" ${bug.status.toLowerCase() === "in progress" ? "selected" : ""}>In Progress</option>
+                    <option value="resolved" ${bug.status.toLowerCase() === "resolved" ? "selected" : ""}>Resolved</option>
+                    <option value="overdue" ${bug.status.toLowerCase() === "overdue" ? "selected" : ""}>Overdue</option>
+                </select>
+            </div>
 
             <div class="hasBorder" class="dateIdentifiedDiv">${bug.entryDate?.split("T")[0]}</div>
 
