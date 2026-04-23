@@ -7,7 +7,6 @@ function login() {
     const adminPassword = "admin";
 
     if (username.toLowerCase() === adminUsername && password === adminPassword) {
-        // Optional: mark user as logged in
         localStorage.setItem("isLoggedIn", "true");
 
         window.location.href = "index.html";
